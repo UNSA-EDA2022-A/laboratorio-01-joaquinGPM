@@ -16,7 +16,32 @@ public class Exercise1 {
 
 	public String convertirBaseGabriel(int a) {
 
-		// TO DO
-		return "El numero proporcionado no esta en base Gabriel.";
+		
+			int  numerominimo=0;
+			int decimal=0, ultimonum, c = 1;
+			boolean J=true;
+	        
+
+	        while (a>0)
+	        {
+	        	ultimonum = a%10;
+	        
+	        if(ultimonum !=1 && ultimonum !=0 && !(numerominimo==0&&ultimonum== 2 )){
+	           J= false;
+
+	        }
+	        if(ultimonum!=0){
+	        	numerominimo = 1;
+	        }
+	        int convercion= (int) Math.pow(2,c);
+	        decimal=decimal+ultimonum*(convercion-1);
+	        c=c+1;
+	        a= a/10;
+			
+		}
+	    if(J ==true)
+	        return ""+ decimal;
+	    else
+	    return "El numero proporcionado no esta en base Gabriel.";
 	}
 }
