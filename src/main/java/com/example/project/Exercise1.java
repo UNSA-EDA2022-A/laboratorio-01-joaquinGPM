@@ -23,7 +23,7 @@ public class Exercise1 {
 	        {
 	            digito = a%10;
 	        
-	        if(digito !=0 && digito !=1 && (digito==2 && min_significativo==0)){
+	        if(digito !=0 && digito !=1 && !(digito==2 && min_significativo==0)){
 	            es_gabriel=0;
 
 	        }
