@@ -16,28 +16,31 @@ public class Exercise1 {
 
 	public String convertirBaseGabriel(int a) {
 
-		int num_decimal=0, digito, contador = 1, n;
-	        int es_gabriel=1, min_significativo=0;
+		
+			int  numerominimo=0;
+			int decimal=0, ultimonum, c = 1;
+			boolean J=true;
+	        
 
 	        while (a>0)
 	        {
-	            digito = a%10;
+	        	ultimonum = a%10;
 	        
-	        if(digito !=0 && digito !=1 && !(digito==2 && min_significativo==0)){
-	            es_gabriel=0;
+	        if(ultimonum !=1 && ultimonum !=0 && !(numerominimo==0&&ultimonum== 2 )){
+	           J= false;
 
 	        }
-	        if(digito==1){
-	            min_significativo = 1;
+	        if(ultimonum!=0){
+	        	numerominimo = 1;
 	        }
-	        int tap= (int) Math.pow(2,contador);
-	        num_decimal=num_decimal+digito*(tap-1);
-	        contador=contador+1;
+	        int convercion= (int) Math.pow(2,c);
+	        decimal=decimal+ultimonum*(convercion-1);
+	        c=c+1;
 	        a= a/10;
 			
 		}
-	    if(es_gabriel ==1)
-	        return ""+ num_decimal;
+	    if(J ==true)
+	        return ""+ decimal;
 	    else
 	    return "El numero proporcionado no esta en base Gabriel.";
 	}
